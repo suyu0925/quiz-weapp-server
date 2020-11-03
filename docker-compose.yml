@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  web:
+    links:
+      - mongo
+    build: .
+    ports:
+      - "2333:80"
+    volumes:
+      - .:/code
+  mongo:
+    image: mongo
